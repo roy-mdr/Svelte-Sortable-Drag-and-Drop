@@ -1,0 +1,150 @@
+html {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+		'Helvetica Neue', sans-serif;
+	font-size: 14px;
+	height: 100%;
+}
+
+body {
+	background-color: var(--background);
+	color: var(--main-text);
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.panel {
+	background-color: var(--carpet);
+	border: 1px solid var(--light);
+	padding: var(--space-half);
+	box-shadow: var(--shadow-default);
+	transition: background-color var(--speed-normal);
+}
+
+.panel.radius {
+	border-radius: var(--radius-cont);
+}
+
+.panel .header {
+	display: flex;
+	font-weight: bold;
+	padding: var(--space-half);
+	cursor: context-menu;
+	color: var(--main-text);
+}
+
+.panel>*:not(:first-child) {
+	margin-top: var(--space-half);
+}
+
+.container {
+	background-color: var(--background);
+	min-height: 2em;
+	border-radius: var(--radius-unit);
+	transition: all var(--speed-normal);
+	padding: 1px;
+}
+
+/* .container.empty {
+	min-height: 2em;
+	border-color: var(--background);
+} */
+
+.container>* {
+	margin: -1px;
+}
+
+.container>*:first-child {
+	border-top-left-radius: var(--radius-unit);
+	border-top-right-radius: var(--radius-unit);
+}
+
+.container>*:last-child {
+	border-bottom-left-radius: var(--radius-unit);
+	border-bottom-right-radius: var(--radius-unit);
+}
+
+.handle {
+	cursor: grab;
+}
+
+.handle.handle-copy {
+	cursor: copy;
+}
+
+.draggable {
+	color: var(--main-text);
+	background-color: var(--carpet);
+	border: 1px solid var(--light);
+	padding: var(--space-half) var(--space-unit);
+	transition: background-color var(--speed-normal);
+}
+
+.draggable:hover {
+	background-color: var(--hint);
+}
+
+.sortable-ghost {
+	opacity: 50%;
+}
+
+/* .sortable-chosen {
+} */
+
+/* .sortable-drag {
+} */
+
+:root {
+	/* shadows */
+	--shadow-default: 0px 1px 1px 0 rgb(0 0 0 / 10%);
+	--shadow-hover: 0px 5px 5px 0 rgb(0 0 0 / 10%);
+
+	/* time */
+	--speed-normal: 0.3s;
+}
+
+.light-theme {
+	--background: #F1F3F4;
+	--carpet: white;
+	--hint: #FAFAFA;
+	--light: #EEE;
+	/* Between carpet and main-text */
+	--mid: #999;
+
+	--light-text: #666;
+	--main-text: #333;
+
+	--accent: paleturquoise;
+
+	--cancel: lightcoral;
+	--accept: lightgreen;
+
+	--radius-unit: 0.25em;
+	--radius-cont: 0.6em;
+
+	--space-half: 0.5em;
+	--space-unit: 1em;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Safari */
+	-khtml-user-select: none;
+	/* Konqueror HTML */
+	-moz-user-select: none;
+	/* Old versions of Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+	/* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
